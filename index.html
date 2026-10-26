@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasneet Malik – Salesforce Administrator &amp; Consultant</title>
+<meta name="description" content="Jasneet Malik: 11x certified Salesforce Administrator and Consultant specializing in governance, Flow automation, Agentforce, and Experience Cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #eef3f6;
+    --surface: #ffffff;
+    --ink: #17303f;
+    --muted: #54697a;
+    --line: #d5e0e7;
+    --hero: #0a2b3c;
+    --teal: #0e8f7e;
+    --amber: #f2b134;
+    --amber-soft: #fcefcf;
+    --teal-soft: #d6f0ea;
+    --blue-soft: #dce8fa;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0c1c26;
+      --surface: #14293a;
+      --ink: #e6eef3;
+      --muted: #9fb3c1;
+      --line: #25404f;
+      --hero: #071c28;
+      --teal: #3fd0bb;
+      --amber-soft: #43381b;
+      --teal-soft: #14423d;
+      --blue-soft: #1f3552;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--teal); text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+
+  /* Hero */
+  .hero {
+    background-color: var(--hero);
+    background-image: radial-gradient(rgba(255,255,255,.13) 1.2px, transparent 1.2px);
+    background-size: 24px 24px;
+    color: #fff;
+    padding: 36px 0 92px;
+  }
+  .hero-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  h1 {
+    font-family: var(--serif); font-weight: 800;
+    font-size: clamp(2.3rem, 6vw, 3.9rem);
+    line-height: 1; letter-spacing: -0.03em;
+    margin: 0 0 8px;
+  }
+  .role { font-family: var(--serif); font-weight: 500; font-size: clamp(1.05rem, 2.4vw, 1.35rem); color: var(--amber); margin: 0 0 4px; }
+  .where { color: #b9ccd8; margin: 0 0 16px; font-size: .95rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .links a {
+    color: #fff; text-decoration: none; font-weight: 600; font-size: .95rem;
+    border: 1.5px solid rgba(255,255,255,.45); padding: 6px 16px; border-radius: 999px;
+  }
+  .links a:hover { background: var(--amber); border-color: var(--amber); color: #0a2b3c; }
+
+  /* Layout */
+  .wrap {
+    max-width: 1080px; margin: -52px auto 0; padding: 0 24px 72px;
+    display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 40px; align-items: start;
+  }
+  h2 { font-family: var(--serif); font-weight: 700; font-size: 1.7rem; letter-spacing: -0.015em; margin: 0 0 20px; display: flex; align-items: center; gap: 12px; }
+  h2::before { content: ""; width: 30px; height: 5px; border-radius: 3px; background: var(--amber); }
+  main section { margin-bottom: 56px; }
+
+  .summary-panel {
+    background: var(--surface); border-radius: 16px; padding: 34px 36px;
+    box-shadow: 0 10px 30px rgba(10,43,60,.14); margin-bottom: 56px;
+    font-family: var(--serif); font-size: 1.28rem; line-height: 1.6; font-weight: 400;
+  }
+
+  /* Experience */
+  .job { position: relative; padding: 0 0 34px 30px; border-left: 2px solid var(--line); }
+  .job::before { content: ""; position: absolute; left: -9px; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--paper); border: 3px solid var(--teal); }
+  .job:first-of-type::before { background: var(--amber); border-color: var(--amber); }
+  .job h3 { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; margin: 0; line-height: 1.25; }
+  .meta { margin: 6px 0 14px; color: var(--muted); font-size: .96rem; }
+  .meta .co { color: var(--teal); font-weight: 600; }
+  .dates { display: inline-block; margin-left: 6px; padding: 1px 10px; border-radius: 999px; background: var(--teal-soft); color: var(--ink); font-size: .85rem; font-weight: 500; }
+  .job ul { margin: 0; padding-left: 1.1rem; }
+  .job li { margin-bottom: 9px; max-width: 70ch; }
+  .job li::marker { color: var(--teal); }
+  .metric { background: linear-gradient(transparent 58%, var(--amber) 58%); padding: 0 2px; }
+
+  /* Skills */
+  .skill-group { margin-bottom: 22px; }
+  .skill-group h3 { font-size: .98rem; font-weight: 600; margin: 0 0 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; margin: 0; padding: 0; }
+  .chips li { font-size: .88rem; line-height: 1.3; padding: 5px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+  .skill-group.ai .chips li { background: var(--amber-soft); border-color: transparent; }
+
+  /* Sidebar */
+  aside { position: sticky; top: 24px; background: var(--surface); border-radius: 16px; padding: 26px 24px; box-shadow: 0 10px 30px rgba(10,43,60,.10); }
+  aside h2 { font-size: 1.3rem; margin-bottom: 16px; }
+  aside h2::before { width: 20px; }
+  .cert-group { margin-bottom: 18px; }
+  .cert-group h3 { font-size: .86rem; font-weight: 600; color: var(--muted); margin: 0 0 7px; }
+  .cert-group .chips li { border: 0; font-size: .83rem; }
+  .cert-group.ai .chips li { background: var(--amber-soft); }
+  .cert-group.core .chips li { background: var(--teal-soft); }
+  .cert-group.con .chips li { background: var(--blue-soft); }
+  .cert-group.other .chips li { background: var(--paper); }
+  .ranger { margin: 4px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 600; font-size: .95rem; }
+  .edu p { margin: 0 0 12px; }
+  .edu small { color: var(--muted); }
+
+  footer { max-width: 1080px; margin: 0 auto; padding: 0 24px 40px; color: var(--muted); font-size: .88rem; }
+
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: 1fr; margin-top: -44px; }
+    aside { position: static; }
+    .summary-panel { padding: 26px 22px; font-size: 1.15rem; }
+    .hero { padding: 28px 0 76px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  @media print {
+    body { background: #fff; color: #000; font-size: 11pt; }
+    .hero { background: #fff; color: #000; padding: 0 0 12px; }
+    .role, .where { color: #000; }
+    .links { display: none; }
+    .wrap { display: block; margin: 0; padding: 0; }
+    aside, .summary-panel { box-shadow: none; position: static; padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Jasneet Malik</h1>
+    <p class="role">Salesforce Administrator &amp; Consultant</p>
+    <p class="where">California, USA · Remote</p>
+    <nav class="links" aria-label="Profiles">
+      <a href="https://www.linkedin.com/in/jasneet-malik-92721b127">LinkedIn</a>
+      <a href="https://www.salesforce.com/trailblazer/jasneetmalik">Trailhead</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <p class="summary-panel">Certified Salesforce Administrator (11x certified), Claude Certified Architect (CCA-F), and 5x Trailhead Ranger with 5 years owning declarative administration, platform governance, and AI-enabled automation across Sales, Nonprofit, Service, and Experience Cloud. I pair governance-first release management with hands-on Flow and Agentforce work, and I bridge engineering and business teams through integrations, data hygiene, training, and documentation.</p>
+
+    <section>
+      <h2>Experience</h2>
+
+      <article class="job">
+        <h3>Salesforce Administrator &amp; Consultant</h3>
+        <p class="meta"><span class="co">ImagineCRM</span> · Pasadena, CA <span class="dates">May 2022 – Present</span></p>
+        <ul>
+          <li>Gather and document business requirements, mapping current-state and future-state processes to guide scalable Salesforce configuration across Sales, Nonprofit, Service, and Experience Cloud.</li>
+          <li>Manage the security and access model (Permission Sets, Profiles, Role Hierarchies, license allocations), aligning user access with functional roles across multi-org environments.</li>
+          <li>Build and govern Flow automations, reducing manual data entry by <strong class="metric">30%</strong> and improving data accuracy.</li>
+          <li>Design and deploy custom Agentforce agents using Agent Builder, configuring Topics, Actions, and natural-language prompts for employee-facing, LLM-powered workflows.</li>
+          <li>Run Salesforce DevOps with Gearset, managing end-to-end deployments with a governance-first approach; keep data clean using Apsona and native matching and duplicate rules.</li>
+          <li>Manage integrations between Salesforce and DocuSign (including CLM), Conga, and Nintex, streamlining contract workflows with reliable, well-documented data flows.</li>
+          <li>Designed Experience Cloud portals for grantees, improving application and tracking efficiency by <strong class="metric">40%</strong>.</li>
+          <li>Write Apex triggers and SOQL queries to extend automation beyond declarative tools; build custom reports and dashboards that support stakeholder decisions.</li>
+          <li>Resolve escalated platform issues that internal admins can’t close, triaging tickets and separating training needs from system bugs to keep end users stable.</li>
+          <li>Deliver end-user training and documentation that drives platform adoption across client organizations.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Salesforce Administrator</h3>
+        <p class="meta"><span class="co">Talent Stacker Career Development Program</span> · Remote, USA <span class="dates">Sep 2021 – Apr 2022</span></p>
+        <ul>
+          <li>Configured Flows, email alerts, and automation templates to meet business requirements; maintained the security model through roles, profiles, and sharing rules.</li>
+          <li>Led end-user training workshops that improved platform adoption; supported data governance and routine data maintenance.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>IT Manager</h3>
+        <p class="meta"><span class="co">GSC Glass Ltd</span> · Greater Noida, India <span class="dates">Jan 2002 – Jul 2016</span></p>
+        <ul>
+          <li>Led IT helpdesk operations, supervising ticket intake, triage, and resolution for hardware, software, and network issues across the organization.</li>
+          <li>Directed IT operations, infrastructure upgrades, and security controls across Windows and Linux environments, building a foundation in data governance, access management, and end-user support leadership.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skill-group ai"><h3>AI and agentic tools</h3><ul class="chips">
+        <li>Agentforce (Agent Builder, Topics &amp; Actions)</li><li>Einstein AI</li><li>Claude</li><li>Claude API</li><li>Claude Code</li><li>Agent skills</li><li>Model Context Protocol</li><li>AI Fluency</li><li>Generative AI prompt design</li><li>LLM-powered workflow automation</li></ul></div>
+      <div class="skill-group"><h3>Governance and access control</h3><ul class="chips">
+        <li>Permission Sets</li><li>Profiles</li><li>Role Hierarchy</li><li>Sharing Rules</li><li>Security &amp; access control</li><li>Naming conventions &amp; configuration standards</li></ul></div>
+      <div class="skill-group"><h3>Automation and configuration</h3><ul class="chips">
+        <li>Salesforce Flow</li><li>Process Builder</li><li>Validation Rules</li><li>Custom Objects &amp; Fields</li><li>Page Layouts</li></ul></div>
+      <div class="skill-group"><h3>Integrations and DevOps</h3><ul class="chips">
+        <li>DocuSign (incl. CLM)</li><li>Conga</li><li>Nintex</li><li>NetSuite</li><li>Gearset</li><li>API-driven integrations</li></ul></div>
+      <div class="skill-group"><h3>Reporting and data</h3><ul class="chips">
+        <li>Custom Reports &amp; Dashboards</li><li>SOQL</li><li>Data Loader</li><li>Data Import Wizard</li><li>Deduplication (Apsona &amp; native rules)</li></ul></div>
+      <div class="skill-group"><h3>Delivery and collaboration</h3><ul class="chips">
+        <li>JIRA</li><li>Smartsheet</li><li>GTM tools</li><li>Cross-functional stakeholder partnership</li></ul></div>
+      <div class="skill-group"><h3>Technical</h3><ul class="chips">
+        <li>Apex</li><li>SOQL</li><li>Git</li><li>JavaScript</li><li>HTML/CSS</li><li>Lightning Web Components</li></ul></div>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Certifications</h2>
+    <div class="cert-group ai"><h3>AI and generative AI</h3><ul class="chips">
+      <li>Claude Certified Architect – Foundations</li><li>AI Associate</li><li>AI Specialist</li><li>Agentforce Innovator</li></ul></div>
+    <div class="cert-group core"><h3>Core</h3><ul class="chips">
+      <li>Administrator</li><li>Advanced Administrator</li><li>Platform App Builder</li><li>Platform Developer I</li></ul></div>
+    <div class="cert-group con"><h3>Consultant</h3><ul class="chips">
+      <li>Sales Cloud</li><li>Service Cloud</li><li>Nonprofit Cloud</li><li>Experience Cloud</li><li>Sharing &amp; Visibility Architect</li></ul></div>
+    <div class="cert-group other"><h3>Other</h3><ul class="chips">
+      <li>Conga Sign Professional Administration</li></ul></div>
+    <p class="ranger">5x Trailhead Ranger</p>
+
+    <div class="edu" style="margin-top:24px">
+      <h2>Education</h2>
+      <p><strong>Master of Business Systems</strong><br><small>Monash University, Australia</small></p>
+      <p><strong>PG Diploma in Software Development</strong><br><small>IIIT Bangalore &amp; UpGrad</small></p>
+    </div>
+  </aside>
+</div>
+
+<footer>© 2026 Jasneet Malik</footer>
+</body>
+</html>
